@@ -10,6 +10,10 @@ jobs:
   test:
     runs-on: windows-latest
 
+    defaults:
+      run:
+        working-directory: ./String Calculator
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
