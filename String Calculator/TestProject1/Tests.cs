@@ -79,11 +79,13 @@ public class Tests
         int result1 = calculator.Calculate("1,2,3");
         int result2 = calculator.Calculate("1\n2\n3");
         int result3 = calculator.Calculate("1,2\n3");
+        int result4 = calculator.Calculate("1\n2,3");
 
         // Assert
         Assert.Equal(6, result1);
         Assert.Equal(6, result2);
         Assert.Equal(6, result3);
+        Assert.Equal(6, result4);
     }
     
     [Fact]
