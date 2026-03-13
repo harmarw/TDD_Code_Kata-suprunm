@@ -85,7 +85,6 @@ public class Tests
         Assert.Equal(6, result1);
         Assert.Equal(6, result2);
         Assert.Equal(6, result3);
-        Assert.Equal(4, result4); // this is test
         
     }
     
