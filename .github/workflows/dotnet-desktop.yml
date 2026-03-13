@@ -10,24 +10,18 @@ jobs:
   test:
     runs-on: windows-latest
 
-    defaults:
-      run:
-        working-directory: ./String Calculator
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore "String Calculator/String Calculator.sln"
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build "String Calculator/String Calculator.sln" --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test --no-build --configuration Release
+        run: dotnet test "String Calculator/String Calculator.sln" --no-build --configuration Release
