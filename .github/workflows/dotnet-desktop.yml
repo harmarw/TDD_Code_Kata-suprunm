@@ -11,17 +11,19 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-dotnet@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
       - name: Restore
-        run: dotnet restore "String Calculator/TestProject1/String Calculator.sln"
+        run: dotnet restore "String Calculator/String Calculator.sln"
 
       - name: Build
-        run: dotnet build "String Calculator/TestProject1/String Calculator.sln" --no-restore --configuration Release
+        run: dotnet build "String Calculator/String Calculator.sln" --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test "String Calculator/TestProject1/String Calculator.sln" --no-build --configuration Release
+        run: dotnet test "String Calculator/String Calculator.sln" --no-build --configuration Release
